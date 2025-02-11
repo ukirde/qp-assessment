@@ -1,0 +1,54 @@
+
+
+<div class="container">
+  <h2>Add New Product</h2>
+<form [formGroup]="addproduct" >
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>Product Name</label>
+      <input type="text" class="form-control" formControlName="name"> 
+    </div>
+</div>
+
+
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <label>Product Price</label>
+    <input type="text" class="form-control" formControlName="price"> 
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <label>Product Category</label>
+    <input type="text" class="form-control" formControlName="category"> 
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <label>Product stock</label>
+    <input type="text" class="form-control" formControlName="stock"> 
+  </div>
+</div>
+<br>
+<button type="submit"  (click)="pass(addproduct.value)"   class="btn btn-primary mx-3">Submit</button>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+<div *ngFor="let product of products" class="product-card">
+    <h2>{{ product.name }}</h2>
+    <p>Category: {{ product.category }}</p>
+    <p>Price: {{ product.price | currency }}</p>
+    <p>Stock: {{ product.stock }}</p>
+  </div>
+ <h1>here</h1>
